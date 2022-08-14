@@ -25,7 +25,6 @@
     "prepublishOnly": "npm run build",
     "release": "np --no-cleanup --no-tests --any-branch",
     "commit": "git-cz",
-    "new": "plop --plopfile ./scripts/plopfile.ts",
     "postnew": "prettier --write src/**/*{ts,tsx} --loglevel silent"
   },
   "keywords": [],
@@ -43,11 +42,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
     }
   },
   "peerDependencies": {
@@ -104,7 +98,6 @@
     "lint-staged": "^9.5.0",
     "node-sass": "4.14.1",
     "np": "^7.5.0",
-    "plop": "^2.6.0",
     "prettier": "^2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",

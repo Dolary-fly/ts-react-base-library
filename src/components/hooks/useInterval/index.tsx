@@ -14,7 +14,7 @@ function useInterval(
     immediate?: boolean;
   },
 ) {
-  const { immediate } = options;
+  const { immediate } = options || {};
 
   const fnRef = useLatest(fn);
 
