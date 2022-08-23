@@ -2,9 +2,12 @@ import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { ModalProps } from './typings';
 import Panel from './panel';
+import { loadOptions } from '@babel/core';
 
 class Modal extends React.Component<ModalProps> {
-  public static success: (options: ModalProps) => void;
+  public static success: (options: ModalProps) => void = (props) => {
+    console.log(props);
+  };
 
   public static info: (options: ModalProps) => void;
 

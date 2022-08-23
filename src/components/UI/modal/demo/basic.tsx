@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from '../';
+import Panel from '../panel';
 import Button from '../../button';
 import '../style';
 
@@ -9,7 +10,12 @@ export default function () {
       <Button
         type="primary"
         onClick={() => {
-          Modal.success({});
+          Modal.success({
+            title: 'success',
+            content: 'modalSuccess',
+            showCancel: false,
+            showOK: false,
+          });
         }}
       >
         success Modal

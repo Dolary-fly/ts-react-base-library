@@ -6,11 +6,17 @@ export type ModalProps = {
   showFooter?: boolean;
   closeByEsc?: boolean;
   title?: string;
+  content?: string;
   okText?: string;
   cancelText?: string;
   onConfirm?: VoidFunction;
   onCancel?: VoidFunction;
   onClose?: VoidFunction;
+  /**
+   *是否显示取消按钮
+   */
+  showCancel?: boolean;
+  showOK?: boolean;
   footer?: React.ReactNode;
   width?: number;
 };

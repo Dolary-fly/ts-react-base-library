@@ -23,8 +23,8 @@ export default () => {
       >
         隐藏
       </Button>
-      <Transition in={showTransition} timeout={150} animation="zoom-in-top">
-        <div>transition</div>
+      <Transition in={showTransition} timeout={400} animation="zoom-in-left">
+        <div style={{ width: '400px', height: '400px', border: '2px solid #ccc' }}>transition</div>
       </Transition>
     </>
   );

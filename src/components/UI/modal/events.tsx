@@ -19,6 +19,7 @@ export function create(type: ModalType) {
       width: 420,
       ...options,
     };
+    console.log('options', options);
 
     ReactDOM.render(getPanel(props), div);
 
@@ -67,18 +68,13 @@ export function create(type: ModalType) {
         </div>
       );
       return (
-        <Panel {...attributes} showFooter={false} onClose={destroy}>
+        <Panel
+          {...attributes}
+          onClose={destroy}
+          onConfirm={handleConfirmClick}
+          onCancel={handleCancelClick}
+        >
           {contentNode}
-          <div className={`${prefixCls}-body-btn`}>
-            {type === 'confirm' && (
-              <Button onClick={handleCancelClick} className={`${prefixCls}-body-btn-cancel`}>
-                Cancel
-              </Button>
-            )}
-            <Button type="primary" onClick={handleConfirmClick}>
-              OK
-            </Button>
-          </div>
         </Panel>
       );
     }

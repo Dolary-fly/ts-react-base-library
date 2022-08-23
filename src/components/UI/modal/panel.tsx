@@ -46,20 +46,36 @@ class ModalPanel extends React.Component<ModalProps, ModalState> {
       return null;
     }
 
-    const { prefixCls, showFooter, footer, closeByEsc, title, className, width, children } =
-      this.props;
+    const {
+      prefixCls,
+      showFooter,
+      footer,
+      closeByEsc,
+      title,
+      className,
+      width,
+      children,
+      showCancel = true,
+      showOK = true,
+    } = this.props;
+    console.log('props', this.props);
     const footerNode = (
       <>
-        <Button type="default" onClick={this.props.onCancel}>
-          Cancel
-        </Button>
-        <Button
-          type="primary"
-          className={`${prefixCls}-footer-confirm`}
-          onClick={this.props.onConfirm}
-        >
-          OK
-        </Button>
+        {showCancel && (
+          <Button type="default" onClick={this.props.onCancel}>
+            Cancel
+          </Button>
+        )}
+
+        {showOK && (
+          <Button
+            type="primary"
+            className={`${prefixCls}-footer-confirm`}
+            onClick={this.props.onConfirm}
+          >
+            OK
+          </Button>
+        )}
       </>
     );
 
